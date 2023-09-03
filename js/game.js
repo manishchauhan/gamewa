@@ -1282,15 +1282,15 @@ function createRecord(data) {
 
 async function preLoadData() {
   const loadSounds = [
-    'img/coingain.mp3',
-    'img/gameover.mp3',
-    'img/rockhit.mp3',
-    'img/sound.mp3'
+    'https://cheeseburgercomics.in/game/img/coingain.mp3',
+    'https://cheeseburgercomics.in/game/img/gameover.mp3',
+    'https://cheeseburgercomics.in/game/img/rockhit.mp3',
+    'https://cheeseburgercomics.in/game/img/sound.mp3'
   ];
   const loadTextures = [
-    'css/ravan.png',
-    'css/logo.png',
-    'css/snake.png'
+    'https://cheeseburgercomics.in/game/css/ravan.png',
+    'https://cheeseburgercomics.in/game/css/logo.png',
+    'https://cheeseburgercomics.in/game/css/snake.png'
   ];
 
   preloadAssets(loadSounds, loadTextures, (audioElements, textures) => {
