@@ -1189,7 +1189,7 @@ async function preloadAssets(soundUrls, textureUrls, onComplete) {
 
   function progressCallback(progress) {
     loadingText.textContent = `Loading: ${progress}%`;
-   // console.log("progress",progress)
+    console.log("progress",progress)
     if (progress === 100) {
       onComplete();
     }
@@ -1207,7 +1207,7 @@ async function preloadAssets(soundUrls, textureUrls, onComplete) {
   for (const url of soundUrls) {
     try {
       const audio = await loadAudio(url);
-     // console.log(url);
+      console.log(url);
       progressCallback(Math.floor((++loadedCount / totalAssets) * 100));
     } catch (error) {
       console.error(error);
@@ -1292,7 +1292,7 @@ async function preLoadData() {
     'https://cheeseburgercomics.in/game/img/coingain.mp3',
     'https://cheeseburgercomics.in/game/img/gameover.mp3',
     'https://cheeseburgercomics.in/game/img/rockhit.mp3',
-    'https://cheeseburgercomics.in/game/img/sound.mp3'
+
   ];
   const loadTextures = [
     'https://cheeseburgercomics.in/game/css/ravan.png',
