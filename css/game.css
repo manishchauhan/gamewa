@@ -1,9 +1,12 @@
+body {
+    overflow: hidden;
+}
 .game-holder {
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	background: -webkit-linear-gradient(#000000, #e1b30c);
-	background: linear-gradient(#000000, #0ebd96b5)
+	background: -webkit-linear-gradient(#000000, #0ebd96);
+	background: linear-gradient(#000000, #0ebd96)
 }
 
 .world {
@@ -143,6 +146,9 @@
 	text-indent: 0.5em;
 	letter-spacing: 0.5em;
 	color: black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .message--instructions {
@@ -196,7 +202,7 @@
 }
 
 .popup {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color:rgb(0 0 0 / 0%);
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
@@ -205,13 +211,201 @@
     color: white;
 	display: flex;
     width: 100vw;
-    height: 100vh;
+
     justify-content: center;
     justify-content: center;
     align-items: center;
     flex-flow: column;
 }
+.user-name {
+    color: rgb(138, 3, 3); /* Change to your desired color */
+	font-weight: bold;
+  }
+
+  .coins {
+    color: green; /* Change to your desired color */
+	font-weight: bold;
+  }
+
+  .distance {
+    color: rgb(0, 89, 255); /* Change to your desired color */
+	font-weight: bold;
+  }
 
 #closeBtn {
     margin-top: 10px;
 }
+.loader {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+}
+.overlay-content{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    flex-flow: column;
+    row-gap: 10px;
+}
+	
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.card {
+	color: #fff;
+	background-color: rgba(255, 255, 255, 0.05);
+	border-radius: 10px;
+	padding: 5px;
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+	max-width: 70%;
+	width: 70%;
+	max-height: 80vh;
+	overflow: auto;
+	display: flex;
+	flex-flow: column;
+	
+}
+
+.card h2 {
+	font-size: 15px;
+
+}
+
+.card p {
+	font-size: 12px;
+
+
+}
+
+.card ol {
+	margin-left: 3px;
+
+}
+
+.card li {
+	font-size: 12px;
+	
+}
+
+#closeBtn {
+	display: block;
+	margin: 20px auto 0;
+	width: 150px;
+	height: 50px;
+	max-height: 50px;
+	background-color: #007bff;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 16px;
+}
+
+#closeBtn:hover {
+	background-color: #0056b3;
+}
+ /* Style for the green card view */
+ .cardView {
+	color: #fff;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    /* max-width: 70%; */
+    width: 50%;
+    background-image: url('ravan.png');
+    overflow: auto;
+    display: flex;
+    flex-flow: column;
+    height: 85%;
+
+	justify-content: center;
+    align-items: center;
+}
+
+/* Style for the input text field */
+.input-field {
+	margin-bottom: 10px;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+/* Style for the beautiful button */
+.beautiful-button {
+	background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 30px;
+    width: 150px;
+    height: 50px;
+}
+
+/* Style for the submit score button */
+.submit-score {
+	background-color: #008CBA;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    height: 50px;
+    width: 150px;
+}
+.messagewarn {
+	display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+	height: 100px;
+    padding: 10px;
+    background-color: #ff0000;
+    color: white;
+    text-align: center;
+    z-index: 1000;
+}
+.heading_leaderBoard {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	column-gap: 15px;
+	margin-top: 20px;
+  }
+  .scoreboard {
+	width: 60%;
+	height: 60%; /* Set maximum height */
+	overflow-y: auto; /* Add scrollbar when content overflows */
+	background-color: #ffffff;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	border-radius: 5px;
+	padding: 20px;
+  }
+  
+  .record {
+	margin-bottom: 10px;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+  }
+ .closebtn {
+	position: absolute;
+	top: 20px;
+	right: 45px;
+	font-size: 60px;
+  }

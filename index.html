@@ -9,10 +9,8 @@
 		<script type="text/javascript" src="js/TweenMax.min.js"></script>
 		<script type="text/javascript" src="js/three.min.js"></script>
 		<script type="text/javascript" src="js/game.js" /></script>
-		<!--[if IE]>
-		  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		</script>
 	</head>
 	<body>
@@ -20,11 +18,16 @@
 			<source src="img/sound.mp3" type="audio/mpeg">
 			Your browser does not support the audio element.
 		</audio>
-		
+		<div id="loadingContainer" class="overlay">
+			<div class="overlay-content">
+				<div class="loader"></div>
+				<div id="loadingText" class="loading-text" style="color: wheat;">Loading...</div>
+			</div>
+		</div>
 		<div class="game-holder" id="gameHolder">
 			<div class="header" id="myHeader">
-				<div class="score__label" >Top Score:-<span id="topoftop">0</span></div>
-				<h4 id="mainheading" style="color: aliceblue;">Save Professor Ashwatthama</h4>
+				<div><img src="css/logo.png" width="55" height="55"><img><h4 id="mainheading" style="color: aliceblue;">THE CHRONO AVIATOR</h4></div>
+				<div class="score__label" >Your Top Score:-<span id="topoftop">0</span></div>
 				<div class="score" id="score">
 					<div class="score__content" id="level">
 						<div class="score__label">level</div>
@@ -51,15 +54,81 @@
 				</div>
 			</div>
 			<div class="world" id="world"></div>
-			<div class="message message--replay" id="replayMessage">Click to Replay</div>
-			<div class="message message--instructions" id="instructions">Grab Yellow coins<span>avoid the Black ones</span></div>
+			<div class="overlay" style="display: none;background: rgba(1,1,1,0.90)  center/cover url(css/ravan.png) no-repeat;" id="replayMessage">
+				 <!-- Beautiful button -->
+				  <!-- Input text field -->
+				  <div class="cardView">
+					<h1>GAME OVER</h1>
+					<h style="
+					text-align: center;
+					background: orangered;
+					font-size: 12px;
+					border-radius: 10px;">Remember, if the user already exists, your score will be updated.</h></h4>
+					<button class="beautiful-button"  id="leaderBoardBtn1">LEADERBOARD</button>
+					<input id="score_text" type="text" class="input-field" placeholder="Enter name">
+					<div id="user_error" style="color: white;
+					background: red;
+					height: 50pc;
+					display: none;
+					justify-content: center;
+					align-items: center;
+					width: 50%;
+					height: 50px;
+					text-align: center;
+				">User Name Required</div>
+					<button id="submit_score" style="margin-bottom: 10px;" class="beautiful-button">SUBMIT SCORE</button>
+					<button id="replay_gameid" class="submit-score" id="replayGame">REPLAY GAME</button>
+					
+				</div>
+			</div>
+			<div class="message message--instructions" id="instructions"><b>Grab Yellow coins</b><span><b>avoid the Black Rocks</b></span></div>
 		</div>
-		<div id="overlay" class="overlay">
+		
+		<div id="instoverlay" style="display: none;background: rgba(1,1,1,0.90)  center/cover url('css/snake.png') no-repeat;" class="overlay" style="display: none;">
 			<div class="popup">
-				<h2>Save Professor Ashwatthama</h2>
-				<p style="max-width: 400px;">Professor Ashwatthama, your favorite superhero, is in a predicament within the world crafted by Ravana. Your mission is to rescue him by moving the mouse up and down. Gather as many yellow coins as possible while avoiding the rocks. Aim for a high score to mark your success.</p>
-				<button style="width: 150px;height:100px;" id="closeBtn">PLAY GAME</button>
+				<div class="card">
+					<h2 style="text-transform: uppercase;">Professor Ashwatthama – The Chrono Aviator</h2>
+					<div style="height:50px"><button class="beautiful-button"  id="leaderBoardBtn">LEADERBOARD</button></div>
+					<p><b>Welcome to "Chrono Aviator: Professor Ashwatthama"!</b></p>
+					<p style="text-align: start;">You are Professor Ashwatthama, a genius mathematician and inventor stuck in World War 1 during 1912. A strange event related to 'Time Tampering' puts you in a place called the Time Well, surrounded by historical chaos. But don't worry, you're not alone. You've built a special airplane using parts from broken planes.</p>
+					<b><p>Here's how to play:</p></b>
+					
+					<div style="text-align: start;    line-height: 18px;">
+						<ol>
+							<li>Fly Your Plane: Scroll the screen or move the mouse to steer the airplane.</li>
+							<li>Collect Stars: Look for the stars. These stars are your cosmic fuel. Collect them as you fly by touching them.</li>
+							<li>Power Up: The more stars you collect, the more powerful your plane becomes. This lets you fly faster and escape the Time Well's grasp.</li>
+							<li>BEWARE: Beware of the flying boulders.</li>
+						</ol>
+					</div>
+				
+					<p style="text-align: start;">Remember, the stars are your key to success. Collect them to make your airplane stronger and achieve your mission of escaping the Time Well and setting things right in history.</p>
+					<p>Enjoy your celestial adventure!</p>
+					
+				</div>
+				<button style="margin-top:10px" id="closeBtn">PLAY GAME</button>
 			</div>
 		</div>
+		<div id="portraitMessage" class="messagewarn">
+    Please rotate your device to landscape mode for a better experience.
+</div>
+		
+			<div class="overlay" id="user_data_board" style="background: rgba(0, 0, 0, 0.95);display: none;">
+				<div class="heading_leaderBoard">
+					<a id="closebtnX" class="closebtn">&times;</a>
+				  <h1 style="color: white;">LEADERBOARD</h1>
+				</div>
+				<div style="    display: flex;
+				justify-content: center;
+	
+				height: 100%">
+					<div class="scoreboard" id="scoreboard">
+						<!-- Records will be dynamically added here -->
+					  </div>
+					 
+				</div>
+				
+			  </div>
+		
 	</body>
 </html>
