@@ -1189,23 +1189,30 @@ async function preloadAssets(soundUrls, textureUrls, onComplete) {
 
   function progressCallback(progress) {
     loadingText.textContent = `Loading: ${progress}%`;
+   // console.log("progress",progress)
     if (progress === 100) {
       onComplete();
     }
   }
-
-  const audioPromises = soundUrls.map(url => {
+  function loadAudio(url) {
     return new Promise((resolve, reject) => {
       const audio = new Audio();
       audio.oncanplaythrough = () => {
-        progressCallback(Math.floor((++loadedCount / totalAssets) * 100));
         resolve(audio);
-
       };
       audio.onerror = () => reject(new Error(`Failed to load audio: ${url}`));
       audio.src = url;
     });
-  });
+  }
+  for (const url of soundUrls) {
+    try {
+      const audio = await loadAudio(url);
+     // console.log(url);
+      progressCallback(Math.floor((++loadedCount / totalAssets) * 100));
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
   function loadTexture(url, index) {
     loader.load(
