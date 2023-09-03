@@ -1289,9 +1289,6 @@ function createRecord(data) {
 
 async function preLoadData() {
   const loadSounds = [
-    'https://cheeseburgercomics.in/game/img/coingain.mp3',
-    'https://cheeseburgercomics.in/game/img/gameover.mp3',
-    'https://cheeseburgercomics.in/game/img/rockhit.mp3',
 
   ];
   const loadTextures = [
