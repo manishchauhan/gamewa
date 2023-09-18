@@ -6,9 +6,11 @@
 		<link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,700italic' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="css/demo.css" />
 		<link rel="stylesheet" type="text/css" href="css/game.css" />
+	
 		<script type="text/javascript" src="js/TweenMax.min.js"></script>
 		<script type="text/javascript" src="js/three.min.js"></script>
-		<script type="text/javascript" src="js/game.js" /></script>
+	
+		<script type="text/javascript" src="js/game.js"></script>
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		</script>
@@ -25,6 +27,9 @@
 			</div>
 		</div>
 		<div class="game-holder" id="gameHolder">
+			<div class="stars"></div>
+		
+			<div class="clouds"></div>
 			<div class="header" id="myHeader">
 				<div><img src="css/logo.png" width="55" height="55"><img><h4 id="mainheading" style="color: aliceblue;">THE CHRONO AVIATOR</h4></div>
 				<div class="score__label" >Your Top Score:-<span id="topoftop">0</span></div>
@@ -51,20 +56,27 @@
 						<div class="score__label"  >Coin</div>
 						<div class="score__value score__value--coin" id="coinTaken">000</div>
 					</div>
+					<div class="score__content" id="dist">
+						<div class="score__label"  >Ravan Life left:- </div>
+						<div class="score__value score__value--coin" id="ravanlife">000</div>
+					</div>
 				</div>
 			</div>
 			<div class="world" id="world"></div>
 			<div class="overlay" style="display: none;background: rgba(1,1,1,0.90)  center/cover url(css/ravan.png) no-repeat;" id="replayMessage">
 				 <!-- Beautiful button -->
 				  <!-- Input text field -->
+
 				  <div class="cardView">
 					<h1>GAME OVER</h1>
-					<h style="
-					text-align: center;
-					background: orangered;
-					font-size: 12px;
-					border-radius: 10px;">Remember, if the user already exists, your score will be updated.</h></h4>
 					<button class="beautiful-button"  id="leaderBoardBtn1">LEADERBOARD</button>
+					<div style="
+					    text-align: center;
+    background: #000000;
+    font-size: 14px;
+    border-radius: 5px;
+    padding: 5px;;" id="combo"></div>
+					
 					<input id="score_text" type="text" class="input-field" placeholder="Enter name">
 					<div id="user_error" style="color: white;
 					background: red;
@@ -81,7 +93,7 @@
 					
 				</div>
 			</div>
-			<div class="message message--instructions" id="instructions"><b>Grab Yellow coins</b><span><b>avoid the Black Rocks</b></span></div>
+			
 		</div>
 		
 		<div id="instoverlay" style="display: none;background: rgba(1,1,1,0.90)  center/cover url('css/snake.png') no-repeat;" class="overlay" style="display: none;">
@@ -129,6 +141,12 @@
 				</div>
 				
 			  </div>
-		
+			  <div id="warning" style="display: none;
+			  position: absolute;
+			  width: 100%;
+			  justify-content: center;
+			  align-items: center;
+			  height: 100%;
+			  color: white;text-transform: uppercase;">You defeated the evil lord Ravan</div>
 	</body>
 </html>

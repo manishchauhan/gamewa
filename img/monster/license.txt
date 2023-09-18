@@ -1,0 +1,11 @@
+Model Information:
+* title:	MONSTER
+* source:	https://sketchfab.com/3d-models/monster-efd2c7fefaf94ad1a53fd40081d56757
+* author:	NORBERTO-3D (https://sketchfab.com/norberto3d)
+
+Model License:
+* license type:	CC-BY-SA-4.0 (http://creativecommons.org/licenses/by-sa/4.0/)
+* requirements:	Author must be credited. Modified versions must have the same license. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "MONSTER" (https://sketchfab.com/3d-models/monster-efd2c7fefaf94ad1a53fd40081d56757) by NORBERTO-3D (https://sketchfab.com/norberto3d) licensed under CC-BY-SA-4.0 (http://creativecommons.org/licenses/by-sa/4.0/)
